@@ -1,0 +1,11 @@
+streamlit
+pandas
+numpy
+matplotlib
+tensorflow-cpu==2.10.0  # Lighter version for cloud
+scikit-learn
+shap
+scipy
+geopandas
+requests
+pydeck
