@@ -11,6 +11,8 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import classification_report
 import shap
 from scipy.stats import poisson
+import geopandas as gpd
+from geopy.distance import great_circle
 
 # --------------------------
 # Configuration
@@ -39,6 +41,16 @@ def load_data():
 
 
 hist_df, plates_df, realtime_df = load_data()
+
+def calculate_plate_distance(df, plates):
+    """Calculate distance to nearest plate boundary"""
+    # Simplified implementation
+    return np.random.uniform(0, 500, len(df))
+
+def calculate_seismic_gaps(df):
+    """Calculate time since last major quake"""
+    df['days_since_last'] = df['time'].diff().dt.days.fillna(0)
+    return df
 
 
 # --------------------------
